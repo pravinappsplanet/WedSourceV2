@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.appsplanet.wedsource"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="in.appsplanet.wedsource.WedSourceApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTask" />
+
+        <!-- HomeActivity -->
+        <activity
+            android:name=".HomeActivity"
+            android:launchMode="singleTask"/>
+
+        <!-- SettingsActivity -->
+        <activity android:name=".SettingsActivity" />
+
+        <!-- VendorDirectoryActivity -->
+        <activity android:name=".vender.VendorDirectoryActivity" />
+
+        <!-- EventActivity -->
+        <activity android:name=".event.EventActivity" />
+
+        <!-- NotesActivity -->
+        <activity android:name=".note.NotesActivity" />
+
+        <!-- SongsActivity -->
+        <activity android:name=".songs.SongsActivity" />
+
+        <!--CalendarActivity-->
+        <activity android:name=".calendar.CalendarActivity" />
+
+        <!--FinanceActivity-->
+        <activity android:name=".finance.FinanceActivity" />
+
+        <!--PromotionsActivity-->
+        <activity android:name=".PromotionsActivity"/>
+
+
+        <!--AboutUsActivity-->
+        <activity android:name=".AboutUsActivity"/>
+
+
+        <!--ContactUsActivity-->
+        <activity android:name=".ContactUsActivity"/>
+
+
+        <!--SummaryActivity-->
+        <activity android:name=".SummaryActivity"/>
+
+
+
+    </application>
+
+</manifest>

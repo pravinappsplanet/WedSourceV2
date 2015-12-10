@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fillViewport="false"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/in.appsplanet.wedsource"
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                app1:mcv_dateTextAppearance="@android:style/TextAppearance.Medium"
+                app1:mcv_weekDayTextAppearance="@android:style/TextAppearance.Medium"
+                app1:mcv_headerTextAppearance="@android:style/TextAppearance.Large"
+                app1:mcv_arrowColor="@color/red"
+                app:mcv_selectionColor="@color/red" />
+
+            <ListView
+                android:id="@+id/listEvents"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/calendarView" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout><!-- From: file:/home/pravin/temp/WedSourceV22/app/src/main/res/layout/fragment_calendar.xml -->

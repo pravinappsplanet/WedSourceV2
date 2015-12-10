@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeddSource</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="loading">Loading...</string>
+    <string name="about">Plan your wedding right at your fingertips with Weddsource!
+\n
+\nUsing our remarkable tools the task of organizing your wedding will be
+
+easy and efficient. Manage guest lists, track finances, choose your
+
+vendors, schedule appointments and much more with this wonderful app.
+
+\n\nSPECIAL APP FEATURES:\n
+
+\nVENDOR DIRECTORY - Customize your chosen vendor list with a
+
+complete vendor directory from all across Ontario.
+
+
+
+\n\nBUDGET - Keep track of wedding finances in detail with this feature.
+
+\n\nNOTES - Include thoughts, to do lists, wedding ideas and other important
+
+details all in your notes.
+
+\n\nGUEST LIST - Make customized guest lists for all your wedding events.
+
+\n\nCALENDAR - Keep important dates and appointments.
+\n
+\nAnd much more... DOWNLOAD THIS APP NOW!</string>
+</resources>

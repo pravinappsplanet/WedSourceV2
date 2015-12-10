@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/layout_header" />
+
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnMyVendors"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_my_vendor"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="My Vendors" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnEvents"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_event_guest"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="Events &amp; Guests" />
+
+    <View style="@style/divider" />
+
+
+    <Button
+        android:id="@+id/btnNotes"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_notes"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="To Do List/ Notes" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnAllWedding"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_notes"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="Complete Wedding Report" />
+
+    <View style="@style/divider" />
+</LinearLayout>
+<!-- From: file:/home/pravin/temp/WedSourceV22/app/src/main/res/layout/activity_summary.xml -->

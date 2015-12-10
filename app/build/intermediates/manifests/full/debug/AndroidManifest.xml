@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.appsplanet.wedsource"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="in.appsplanet.wedsource.WedSourceApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="in.appsplanet.wedsource.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="in.appsplanet.wedsource.LoginActivity"
+            android:launchMode="singleTask" />
+
+        <!-- HomeActivity -->
+        <activity
+            android:name="in.appsplanet.wedsource.HomeActivity"
+            android:launchMode="singleTask" />
+
+        <!-- SettingsActivity -->
+        <activity android:name="in.appsplanet.wedsource.SettingsActivity" />
+
+        <!-- VendorDirectoryActivity -->
+        <activity android:name="in.appsplanet.wedsource.vender.VendorDirectoryActivity" />
+
+        <!-- EventActivity -->
+        <activity android:name="in.appsplanet.wedsource.event.EventActivity" />
+
+        <!-- NotesActivity -->
+        <activity android:name="in.appsplanet.wedsource.note.NotesActivity" />
+
+        <!-- SongsActivity -->
+        <activity android:name="in.appsplanet.wedsource.songs.SongsActivity" />
+
+        <!-- CalendarActivity -->
+        <activity android:name="in.appsplanet.wedsource.calendar.CalendarActivity" />
+
+        <!-- FinanceActivity -->
+        <activity android:name="in.appsplanet.wedsource.finance.FinanceActivity" />
+
+        <!-- PromotionsActivity -->
+        <activity android:name="in.appsplanet.wedsource.PromotionsActivity" />
+
+        <!-- AboutUsActivity -->
+        <activity android:name="in.appsplanet.wedsource.AboutUsActivity" />
+
+        <!-- ContactUsActivity -->
+        <activity android:name="in.appsplanet.wedsource.ContactUsActivity" />
+
+        <!-- SummaryActivity -->
+        <activity android:name="in.appsplanet.wedsource.SummaryActivity" />
+    </application>
+
+</manifest>

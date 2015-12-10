@@ -1,0 +1,144 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:2:1-81:12
+	xmlns:android
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:2:11-69
+	package
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:5:5-30
+	android:versionCode
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+uses-sdk
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+MERGED from [com.prolificinteractive:material-calendarview:1.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.prolificinteractive/material-calendarview/1.1.0/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+		INJECTED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:11:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:14:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:15:5-80
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:15:22-77
+application
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:17:5-79:19
+MERGED from [com.android.support:appcompat-v7:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.prolificinteractive:material-calendarview:1.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.prolificinteractive/material-calendarview/1.1.0/AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:21:9-41
+	android:allowBackup
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:19:9-35
+	android:icon
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:20:9-45
+	android:theme
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:22:9-40
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:18:9-60
+activity#in.appsplanet.wedsource.SplashActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:23:9-31:20
+	android:label
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:25:13-45
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:24:13-43
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:26:13-30:29
+action#android.intent.action.MAIN
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:29:27-74
+activity#in.appsplanet.wedsource.LoginActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:32:9-34:47
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:33:13-42
+	android:launchMode
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:34:13-44
+activity#in.appsplanet.wedsource.HomeActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:37:9-39:46
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:38:13-41
+	android:launchMode
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:39:13-44
+activity#in.appsplanet.wedsource.SettingsActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:42:9-54
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:42:19-51
+activity#in.appsplanet.wedsource.vender.VendorDirectoryActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:45:9-68
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:45:19-65
+activity#in.appsplanet.wedsource.event.EventActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:48:9-57
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:48:19-54
+activity#in.appsplanet.wedsource.note.NotesActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:51:9-56
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:51:19-53
+activity#in.appsplanet.wedsource.songs.SongsActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:54:9-57
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:54:19-54
+activity#in.appsplanet.wedsource.calendar.CalendarActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:57:9-63
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:57:19-60
+activity#in.appsplanet.wedsource.finance.FinanceActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:60:9-61
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:60:19-58
+activity#in.appsplanet.wedsource.PromotionsActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:63:9-55
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:63:19-53
+activity#in.appsplanet.wedsource.AboutUsActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:67:9-52
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:67:19-50
+activity#in.appsplanet.wedsource.ContactUsActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:71:9-54
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:71:19-52
+activity#in.appsplanet.wedsource.SummaryActivity
+ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:75:9-52
+	android:name
+		ADDED from /home/pravin/temp/WedSourceV22/app/src/main/AndroidManifest.xml:75:19-50

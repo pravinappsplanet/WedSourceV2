@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- toolbar -->
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/btnVendorDirectory"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_vendor_directory"
+        android:text="Vendor Directory" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnMyVendors"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_my_vendor"
+        android:text="My Vendors" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnEvents"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_event_guest"
+        android:text="Events &amp; Guests" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnCalendar"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:text="Calendar" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnFinances"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_finance"
+        android:text="Finances" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnSongs"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_song_list"
+        android:text="Song Lists" />
+
+    <View style="@style/divider" />
+
+    <Button
+        android:id="@+id/btnPromotions"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_permotion"
+        android:text="Promotions"
+        android:visibility="gone" />
+
+    <View
+        style="@style/divider"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnNotes"
+        style="@style/home_button"
+        android:drawableLeft="@drawable/ic_notes"
+        android:text="To Do List/ Notes" />
+
+    <View style="@style/divider" />
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="center|left"
+        android:padding="@dimen/spacing_tiny"
+        android:textColor="@color/black" />
+
+
+    <!--income-->
+    <TextView
+        android:id="@+id/txtIncome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="center"
+        android:padding="@dimen/spacing_tiny"
+        android:textColor="@color/black" />
+
+
+    <!--expense-->
+    <TextView
+        android:id="@+id/txtExpense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="center"
+        android:padding="@dimen/spacing_tiny"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>

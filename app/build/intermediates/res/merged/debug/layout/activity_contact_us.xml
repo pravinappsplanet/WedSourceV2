@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/layout_header" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/spacing_normal"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="General Inquiries" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/spacing_normal"
+        android:autoLink="email"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="Info@weddsource.com" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/spacing_normal"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="Vendor Marketing" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/spacing_normal"
+        android:autoLink="email"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="Sales@weddsource.com" />
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/spacing_normal"
+        android:autoLink="web"
+        android:drawableRight="@drawable/ic_arrow"
+        android:text="www.weddsource.com" />
+
+
+</LinearLayout>
+<!-- From: file:/home/pravin/temp/WedSourceV22/app/src/main/res/layout/activity_contact_us.xml -->

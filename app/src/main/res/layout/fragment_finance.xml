@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fillViewport="false"
+    android:orientation="vertical">
+
+<!--total-->
+    <LinearLayout
+        android:id="@+id/lyGrandTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <ImageView
+            android:id="@+id/imgShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:scaleType="fitStart"
+            android:src="@drawable/btn_share" />
+
+        <TextView
+            android:id="@+id/txtGrandTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/divider"
+        android:layout_above="@id/lyGrandTotal"
+        android:background="@color/black" />
+
+
+    <!--VERTICAL DIVIDER -->
+    <LinearLayout
+        android:id="@+id/lyDivider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lyGrandTotal"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+
+        <View style="@style/seprator" />
+        <!--income-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+        <View style="@style/seprator" />
+        <!--expense-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5" />
+    </LinearLayout>
+
+    <!--total -->
+    <LinearLayout
+        android:id="@+id/lyTotal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/divider"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center|left"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Total"
+            android:textColor="@color/black" />
+
+        <!--income-->
+        <TextView
+            android:id="@+id/txtTotalIncome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:padding="@dimen/spacing_tiny"
+            android:textColor="@color/green" />
+
+        <!--expense-->
+        <TextView
+            android:id="@+id/txtTotalExpense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:padding="@dimen/spacing_tiny"
+            android:textColor="@color/red" />
+
+    </LinearLayout>
+
+    <!--top-->
+    <View
+        android:id="@+id/dividerTotal"
+        style="@style/divider"
+        android:layout_above="@id/lyTotal"
+        android:background="@color/black" />
+
+
+    <!--top-->
+    <View
+        android:id="@+id/dividerTop"
+        style="@style/divider"
+        android:layout_alignParentTop="true"
+        android:background="@color/black" />
+
+
+    <!--header -->
+    <LinearLayout
+        android:id="@+id/lyHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dividerTop"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center|left"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Description"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!--income-->
+        <TextView
+            android:id="@+id/txtIncome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Income"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!--expense-->
+        <TextView
+            android:id="@+id/txtExpense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Expense"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divider2"
+        style="@style/divider"
+        android:layout_below="@id/lyHeader"
+        android:background="@color/black" />
+
+    <!--finance -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dividerTotal"
+        android:layout_below="@id/divider2">
+
+        <LinearLayout
+            android:id="@+id/lyFinance"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

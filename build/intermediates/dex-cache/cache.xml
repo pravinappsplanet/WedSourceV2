@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.prolificinteractive/material-calendarview/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="19f21aeff153921e11375e50183f30405d018477">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/classes-f945d558c4ef207856b9f75fafb6cf606e9d743e.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/classes-9122f08bcfbc8f07eee3281f65a4736733ab4ed4.jar" />
+    </item>
+    <item
+        jar="/root/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-aeef0f0bccd52a0e6450a31c4255f27a9fce49d5.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/classes-fd203b7342cf8b018864fed3b52c5c102ad4330d.jar" />
+    </item>
+    <item
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/gson-2.3.1-db347212bcda2648244d4b24078ad368b698503a.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/classes-ae1e19a0669af04fff01a669d00cc2eb0d72b898.jar" />
+    </item>
+    <item
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.19/a8f23f65fc1e522ee4a1a697ee569901a46741fa/library-1.0.19.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/library-1.0.19-87c239e70294a00e0380c13aeb73b09582920674.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/libs/itextpdf-5.5.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dfa986eb534a5b0c6684343c9adc06614985e54f">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/itextpdf-5.5.5-6ef73b4c85e7c24bd2d34d54c85e7544911f6766.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/libs/DynamicPDF.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="440c643700b8505a40852ce129ad088cc9960c20">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/DynamicPDF-f5a8c8107fc33b7f3c4c5a7c3a332aa296e65725.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-f1a121316d28979e37b8f4af25ff3559fbb65aaf.jar" />
+    </item>
+    <item
+        jar="/home/pravin/temp/WedSourceV22/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/pravin/temp/WedSourceV22/app/build/intermediates/pre-dexed/debug/classes-b8462cf27ffe6500d9b2ce008334f93254611bf5.jar" />
+    </item>
+
+</items>

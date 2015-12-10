@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/spacing_tiny"
+    android:paddingRight="@dimen/spacing_tiny"
+    android:paddingTop="@dimen/spacing_tiny">
+
+    <!-- back -->
+
+    <ImageView
+        android:id="@+id/imgHeaderBack"
+        android:layout_width="wrap_content"
+        android:onClick="onClick"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/back" />
+
+    <!-- back -->
+
+    <ImageView
+        android:id="@+id/imgHeaderAdd"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/btn_add"
+        android:visibility="invisible" />
+
+    <!-- header -->
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_centerInParent="true"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/red" />
+
+</RelativeLayout><!-- From: file:/home/pravin/temp/WedSourceV22/app/src/main/res/layout/layout_header.xml -->
