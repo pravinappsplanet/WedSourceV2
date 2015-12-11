@@ -1,4 +1,4 @@
-package in.appsplanet.wedsource.vender;
+package in.appsplanet.wedsource.calendar;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,27 +24,27 @@ import org.json.JSONObject;
 
 import in.appsplanet.wedsource.R;
 import in.appsplanet.wedsource.WedSourceApp;
-import in.appsplanet.wedsource.pojo.Vendor;
+import in.appsplanet.wedsource.pojo.Event;
 import in.appsplanet.wedsource.utils.AppSettings;
 import in.appsplanet.wedsource.utils.Constants;
 import in.appsplanet.wedsource.utils.CustomRequest;
 import in.appsplanet.wedsource.utils.IOUtils;
 
-public class VendorDetailsFragment extends Fragment implements OnClickListener {
+public class AppointmentDetailsFragment extends Fragment implements OnClickListener {
     private Context mContext;
     private TextView mTxtName, mTxtAddress, mTxtEmail, mTxtPhone, mTxtWebSite;
-    public Vendor mVendor;
     private ImageView mImgShare, mImgEdit, mImgDelete;
+    private Event mEvent;
     private AppSettings mAppSettings;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vendor_details, null);
+        View view = inflater.inflate(R.layout.fragment_appointment_details, null);
         mContext = getActivity();
 
-        mVendor = (Vendor) getArguments().getSerializable(
-                Constants.INTENT_VENDOR);
+        mEvent = (Event) getArguments().getSerializable(
+                Constants.INTENT_EVENT);
         mTxtName = (TextView) view.findViewById(R.id.txtName);
         mTxtAddress = (TextView) view.findViewById(R.id.txtAddress);
         mTxtEmail = (TextView) view.findViewById(R.id.txtEmail);
@@ -69,48 +68,32 @@ public class VendorDetailsFragment extends Fragment implements OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // UPDATE HEADER
-        if (mVendor.getCategory() == null)
-            ((VendorDirectoryActivity) getActivity())
-                    .setHeader("My Vendors");
-        else
-            ((VendorDirectoryActivity) getActivity())
-                    .setHeader(mVendor.getCategory().getName());
-
-        //ADD VISIBLE
-        ((VendorDirectoryActivity) getActivity()).mImgHeaderAdd.setVisibility(View.VISIBLE);
-
-        //EDIT AND DELETE ONLY FOR MY VENDOR
-        if (((VendorDirectoryActivity) getActivity()).isMyVendor) {
-            mImgDelete.setVisibility(View.VISIBLE);
-            mImgEdit.setVisibility(View.VISIBLE);
-        } else {
-            mImgDelete.setVisibility(View.GONE);
-            mImgEdit.setVisibility(View.GONE);
-        }
+        ((CalendarActivity) getActivity())
+                .setHeader("Event Details");
 
     }
 
     private void loadDetails() {
-        mTxtName.setText(mVendor.getName());
-        if (TextUtils.isEmpty(mVendor.getAddress()))
+        mTxtName.setText(mEvent.getName());
+        if (TextUtils.isEmpty(mEvent.getVenue()))
             mTxtAddress.setVisibility(View.GONE);
         else
-            mTxtAddress.setText("Address: " + mVendor.getAddress());
+            mTxtAddress.setText("Address: " + mEvent.getVenue());
 
-        if (TextUtils.isEmpty(mVendor.getEmail()))
+        if (TextUtils.isEmpty(mEvent.getTime()))
             mTxtEmail.setVisibility(View.GONE);
         else
-            mTxtEmail.setText("Email: " + mVendor.getEmail());
+            mTxtEmail.setText("Time: " + mEvent.getTime());
 
-        if (TextUtils.isEmpty(mVendor.getPhone()))
+        if (TextUtils.isEmpty(mEvent.getDate()))
             mTxtPhone.setVisibility(View.GONE);
         else
-            mTxtPhone.setText("Phone: " + mVendor.getPhone());
+            mTxtPhone.setText("Date: " + mEvent.getDate());
 
-        if (TextUtils.isEmpty(mVendor.getWebsite()))
+        if (TextUtils.isEmpty(mEvent.getDescription()))
             mTxtWebSite.setVisibility(View.GONE);
         else
-            mTxtWebSite.setText("Website: " + mVendor.getWebsite());
+            mTxtWebSite.setText("Description: " + mEvent.getDescription());
     }
 
     @Override
@@ -118,29 +101,19 @@ public class VendorDetailsFragment extends Fragment implements OnClickListener {
         switch (v.getId()) {
 
             case R.id.imgShare://SHARE
-                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, mVendor.getName());
-                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, mVendor.getName() + " " + mVendor.getAddress() + " " + mVendor.getPhone() + " " + mVendor.getEmail() + " " + mVendor.getWebsite());
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, mEvent.getName());
+                shareIntent.putExtra(Intent.EXTRA_TEXT, mEvent.getName() + " " + mEvent.getVenue() + " " + mEvent.getTime() + " " + mEvent.getDate() + " " + mEvent.getDescription());
                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"));
                 break;
 
             case R.id.imgDelete://DELETE
-                showDialogDelete(mVendor.getId());
+                showDialogDelete(mEvent.getId());
                 break;
 
             case R.id.imgEdit://EDIT
-                getActivity().getSupportFragmentManager().popBackStack();
-                EditVendorFragment feedbackFragment = new EditVendorFragment();
-                Bundle args = new Bundle();
-                args.putSerializable(Constants.INTENT_VENDOR, mVendor);
-                feedbackFragment.setArguments(args);
-                FragmentTransaction fragmentTransaction = getActivity()
-                        .getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.addToBackStack(feedbackFragment.getClass()
-                        .getName());
-                fragmentTransaction.replace(R.id.frag_content, feedbackFragment);
-                fragmentTransaction.commit();
+
                 break;
 
             default:
@@ -155,7 +128,7 @@ public class VendorDetailsFragment extends Fragment implements OnClickListener {
     private void showDialogDelete(final int id) {
         android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mContext);
         builder.setTitle("Delete");
-        builder.setMessage("Are you sure you want to delete vendor?");
+        builder.setMessage("Are you sure you want to delete event?");
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -178,9 +151,8 @@ public class VendorDetailsFragment extends Fragment implements OnClickListener {
     private void delete(String id) {
         String tag_json_obj = "deleteMyVendor";
         ContentValues values = new ContentValues();
-        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_DELETEMYVENDOR);
-        values.put(Constants.PARAM_VENDORID, id);
-        values.put(Constants.PARAM_USERID, mAppSettings.getUserId());
+        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_DELETEAPPOINTMENT);
+        values.put(Constants.PARAM_APPOINTMENTID, id);
         String url = Constants.URL_BASE + IOUtils.getQuery(values);
         Log.d("test", "login ulr" + url);
 

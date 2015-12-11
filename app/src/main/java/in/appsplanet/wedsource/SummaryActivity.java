@@ -33,6 +33,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import in.appsplanet.wedsource.pojo.Event;
+import in.appsplanet.wedsource.pojo.Finance;
 import in.appsplanet.wedsource.pojo.Notes;
 import in.appsplanet.wedsource.pojo.Vendor;
 import in.appsplanet.wedsource.utils.AppSettings;
@@ -50,7 +51,9 @@ public class SummaryActivity extends AppCompatActivity implements
     private AppSettings mAppSettings;
     final ArrayList<String> vendors = new ArrayList<String>();
     final ArrayList<String> events = new ArrayList<String>();
+    final ArrayList<String> finance = new ArrayList<String>();
     final ArrayList<String> noteList = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -253,9 +256,56 @@ public class SummaryActivity extends AppCompatActivity implements
 
                             //CREATE PDF
                             if (isAllWeddingReport)
-                                loadNotes(isAllWeddingReport);
+                                loadFinance(isAllWeddingReport);
                             else
                                 CreatedPDF(events);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        // Adding request to request queue
+        WedSourceApp.getInstance()
+                .addToRequestQueue(jsObjRequest, tag_json_obj);
+
+    }
+
+    private void loadFinance(final boolean isAllWeddingReport) {
+        finance.clear();
+        String tag_json_obj = "getFinance";
+        ContentValues values = new ContentValues();
+        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_GETFINANCE);
+        values.put(Constants.PARAM_USERID, mAppSettings.getUserId());
+        String url = Constants.URL_BASE + IOUtils.getQuery(values);
+
+        CustomRequest jsObjRequest = new CustomRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray data = response.getJSONObject("Response")
+                                    .getJSONArray("Data");
+                            Gson gson = new Gson();
+                            for (int i = 0; i < data.length(); i++) {
+                                JSONObject object = data.getJSONObject(i);
+                                Finance event = gson.fromJson(object.toString(),
+                                        Finance.class);
+                                //TODO GET TANSATION OBJ
+                                finance.add(event.toString());
+                            }
+
+                            //CREATE PDF
+                            if (isAllWeddingReport)
+                                loadNotes(isAllWeddingReport);
+                            else
+                                CreatedPDF(finance);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -306,7 +356,9 @@ public class SummaryActivity extends AppCompatActivity implements
                                 ArrayList<String> temp = new ArrayList<String>();
                                 temp.addAll(vendors);
                                 temp.addAll(events);
+                                temp.addAll(finance);
                                 temp.addAll(noteList);
+
 
                                 Log.d("test", "all items" + vendors.size());
                                 Log.d("test", "all items" + events.size());

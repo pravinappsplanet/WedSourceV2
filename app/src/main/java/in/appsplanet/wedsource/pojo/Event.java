@@ -20,7 +20,6 @@ public class Event implements Serializable {
     private String description;
     private int id;
     private ArrayList<Guest> guest = new ArrayList<Guest>();
-    private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
 
     /**
@@ -117,23 +116,15 @@ public class Event implements Serializable {
         String guestStr = "";
         for (Guest guestData :
                 guest) {
-            guestStr = guestStr + " Name: " + guestData.getName() + " No.Of Persons: " + guestData.getNoOfPersons()+"\n";
+            guestStr = guestStr + " Name: " + guestData.getName() + " No.Of Persons: " + guestData.getNoOfPersons() + "\n";
         }
 
-
-        String financeStr = "";
-        for (Transaction transaction : transactions){
-            financeStr = financeStr +transaction.toString();
-        }
-
-
-            Log.d("test", "Guest:" + guest.size() + " Guest Str:" + guestStr);
+        Log.d("test", "Guest:" + guest.size() + " Guest Str:" + guestStr);
         return "Name:" + name + "\n" +
                 "Time:" + time + " " +
                 "Date:" + date + " " +
                 "Venue:" + venue + "\n" +
-                "Guest:" + guestStr+"\n" +
-                "Finance:\n" + financeStr;
+                "Guest:" + guestStr;
 
     }
 
@@ -145,11 +136,4 @@ public class Event implements Serializable {
         this.guest = guest;
     }
 
-    public ArrayList<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(ArrayList<Transaction> transactions) {
-        this.transactions = transactions;
-    }
 }

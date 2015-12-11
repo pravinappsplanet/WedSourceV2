@@ -17,7 +17,7 @@
             android:id="@+id/edtName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Name of event"
+            android:hint="Name"
             android:singleLine="true" />
 
         <EditText

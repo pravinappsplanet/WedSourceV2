@@ -50,7 +50,7 @@
         style="@style/home_button"
         android:drawableLeft="@drawable/ic_notes"
         android:drawableRight="@drawable/ic_arrow"
-        android:text="Complete Wedding Report" />
+        android:text="Wedding Report" />
 
     <View style="@style/divider" />
 </LinearLayout>

@@ -2,9 +2,11 @@ package in.appsplanet.wedsource.calendar;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,15 +34,13 @@ import java.util.Date;
 
 import in.appsplanet.wedsource.R;
 import in.appsplanet.wedsource.WedSourceApp;
-import in.appsplanet.wedsource.event.AddEventFragment;
-import in.appsplanet.wedsource.event.EventDetailsFragment;
 import in.appsplanet.wedsource.pojo.Event;
 import in.appsplanet.wedsource.utils.AppSettings;
 import in.appsplanet.wedsource.utils.Constants;
 import in.appsplanet.wedsource.utils.CustomRequest;
 import in.appsplanet.wedsource.utils.IOUtils;
 
-public class CalendarFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class CalendarFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener,AdapterView.OnItemLongClickListener {
     private Context mContext;
     private ListView mListView;
     private ArrayList<Event> mListEvent;
@@ -65,6 +65,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
                 R.layout.item_vender_country, R.id.txtName, mListEvent);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(this);
+        mListView.setOnItemLongClickListener(this);
         mSimpleDateFormat = new SimpleDateFormat(Constants.DATE_FORMAT);
         mMaterialCalendarView.setOnClickListener(this);
         //CURRENT DATE
@@ -87,13 +88,14 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
      * @param date
      */
     private void dateSelected(CalendarDay date) {
+        mMaterialCalendarView.clearSelection();
         Event event = getEventFromDate(date.getDate());
         //EVENT EXIST
         if (event != null) {
             loadEventDetails(event);
         } else {//ADD NEW
             //TODO PASS DATE TO EVENT
-            AddEventFragment addEventFragment = new AddEventFragment();
+            AddAppointmentFragment addEventFragment = new AddAppointmentFragment();
             Bundle args = new Bundle();
             args.putSerializable(Constants.INTENT_EVENT_DATE, date.getDate());
             addEventFragment.setArguments(args);
@@ -122,10 +124,13 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
     }
 
     private void loadEvent() {
+        mListEvent.clear();
+        mAdapter.notifyDataSetChanged();
+        mMaterialCalendarView.clearSelection();
         mMaterialCalendarView.setSelectionColor(getResources().getColor(R.color.red));
         String tag_json_obj = "loadEvent";
         ContentValues values = new ContentValues();
-        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_GETEVENT);
+        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_GETAPPOINTMENT);
         values.put(Constants.PARAM_USERID, mAppSettings.getUserId());
         String url = Constants.URL_BASE + IOUtils.getQuery(values);
 
@@ -188,8 +193,10 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
      * @param event
      */
     private void loadEventDetails(Event event) {
-        EventDetailsFragment eventDetailsFragment = new
-                EventDetailsFragment();
+
+        //TODO DETAILS
+        AppointmentDetailsFragment eventDetailsFragment = new
+                AppointmentDetailsFragment();
         Bundle args = new Bundle();
         args.putSerializable(Constants.INTENT_EVENT,
                 event);
@@ -201,6 +208,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
                 .getName());
         fragmentTransaction.replace(R.id.frag_content, eventDetailsFragment);
         fragmentTransaction.commit();
+
     }
 
     /**
@@ -239,4 +247,75 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
         listView.requestLayout();
     }
 
+
+    private void showDialogDelete(final int id) {
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mContext);
+        builder.setTitle("Delete");
+        builder.setMessage("Are you sure you want to delete appointment?");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                delete(id + "");
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    /**
+     * @param id
+     */
+    private void delete(String id) {
+        String tag_json_obj = "deleteNote";
+        ContentValues values = new ContentValues();
+        values.put(Constants.PARAM_COMMAND, Constants.COMMAND_DELETEAPPOINTMENT);
+        values.put(Constants.PARAM_APPOINTMENTID, id);
+        String url = Constants.URL_BASE + IOUtils.getQuery(values);
+        Log.d("test", "login ulr" + url);
+
+        CustomRequest jsObjRequest = new CustomRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject data = response
+                                    .getJSONObject("Response").getJSONObject(
+                                            "Data");
+                            if (data.getString("success").equalsIgnoreCase(
+                                    "true")) {
+                                loadEvent();
+                            }
+                            Toast.makeText(mContext, data.getString("message"),
+                                    Toast.LENGTH_SHORT).show();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("test",
+                        "loging error" + error.getLocalizedMessage());
+            }
+        });
+
+        // Adding request to request queue
+        WedSourceApp.getInstance()
+                .addToRequestQueue(jsObjRequest, tag_json_obj);
+
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        showDialogDelete(mListEvent.get(position).getId());
+        return true;
+    }
 }
