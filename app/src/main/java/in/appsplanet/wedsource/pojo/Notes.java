@@ -68,7 +68,7 @@ public class Notes implements Serializable {
 	}
 
 	public String getPDFData() {
-		return "Name : " + name + "\n" +
+		return "Note Title : " + name + "\n" +
 				"Date : " + date + "\n" +
 				"Description : " + description + "\n";
 

@@ -104,15 +104,15 @@ public class SummaryActivity extends AppCompatActivity implements
 
             String label = data.get(i);
             Log.d("test", "length" + label.length());
-            if (label.length() > 200) {
-                space = 300;
-            } else {
-                space = 120;
-            }
+//            if (label.length() > 200) {
+//                space = 300;
+//            } else {
+//                space = 120;
+//            }
 
             Log.d("test","label"+label+" space"+space+" length"+label.length());
 
-            Label objLabel = new Label(space+label, 0, temp * space, 550, 300,
+            Label objLabel = new Label(label, 0, temp * space, 550, 300,
                     Font.getHelvetica(), 14, TextAlign.LEFT);
             // Add label to page
             objPage.getElements().add(objLabel);
@@ -298,7 +298,7 @@ public class SummaryActivity extends AppCompatActivity implements
                                 Finance event = gson.fromJson(object.toString(),
                                         Finance.class);
                                 //TODO GET TANSATION OBJ
-                                finance.add(event.toString());
+                                finance.add(event.getPDFData());
                             }
 
                             //CREATE PDF
@@ -360,9 +360,10 @@ public class SummaryActivity extends AppCompatActivity implements
                                 temp.addAll(noteList);
 
 
-                                Log.d("test", "all items" + vendors.size());
-                                Log.d("test", "all items" + events.size());
-                                Log.d("test", "all items" + noteList.size());
+                                Log.d("test", "all vendor" + vendors.size());
+                                Log.d("test", "all event" + events.size());
+                                Log.d("test", "all notes" + noteList.size());
+                                Log.d("test", "all finanace" + finance.size());
                                 Log.d("test", "all items" + temp.size());
                                 CreatedPDF(temp);
                             }

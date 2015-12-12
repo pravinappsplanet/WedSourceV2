@@ -120,7 +120,7 @@ public class Event implements Serializable {
         }
 
         Log.d("test", "Guest:" + guest.size() + " Guest Str:" + guestStr);
-        return "Name:" + name + "\n" +
+        return "Event Name:" + name + "\n" +
                 "Time:" + time + " " +
                 "Date:" + date + " " +
                 "Venue:" + venue + "\n" +
